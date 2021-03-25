@@ -211,7 +211,7 @@ html,body{
     float: right;
     width: 400px;
     height: 100%;
-
+    user-select: none;
 }
 .content_right .song_info{
     text-align: center;
@@ -241,6 +241,9 @@ html,body{
 
     text-align: center;
     margin-top: 30px;
+    height: 150px;
+    overflow: hidden;
+    
 }
 .content_right .song_lyric li{
     list-style: none;
@@ -265,6 +268,7 @@ html,body{
     height: 100%;
 
     margin: 0 auto;
+    user-select: none;
 }
 .footer_in a{
     display: inline-block;
@@ -405,6 +409,10 @@ html,body{
     left: 0;
     top: 10px;
 }
+.music_voice_info .music_voice_icon2{
+    background-position: 0 -182px;
+}
+
 .music_voice_info .music_voice_bar{
     width: 70px;
     height: 4px;
@@ -425,7 +433,7 @@ html,body{
     background: #fff;
     position: relative;
     top: -5px;
-    left:40px;
+    left:70px;
 }
 .mask_bg{
     position: absolute;
