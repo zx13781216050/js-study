@@ -9,6 +9,7 @@
         },
         times: [],
         lyrics: [],
+        index: -1,
         loadLyric: function (callBack) {
             var $this = this;
             $.ajax({
@@ -26,6 +27,8 @@
         parseLyric: function (data) {
 
             var $this = this;
+            $this.times = [];
+            $this.lyrics = [];
             var array = data.split("\n");
             var timeReg = /\[(\d*:\d*\.\d*)\]/
             $.each(array, function (index, ele) {
@@ -44,6 +47,13 @@
                 $this.times.push(time);
 
             })
+        },
+        currentIndex: function (currentTime) {
+            if (currentTime >= this.times[0]) {
+                this.index++;
+                this.times.shift();
+            }
+            return this.index;
         }
     }
     Lyric.prototype.init.prototype = Lyric.prototype;
